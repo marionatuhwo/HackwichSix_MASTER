@@ -10,7 +10,7 @@ import UIKit
 class secondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     var myDestinationsArray = ["Japan", "New Zealand", "New York City"]
-
+    var myCitiesArray = ["Tokyo", "Aukland", "New York City"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,9 +20,10 @@ class secondViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-               let text = myDestinationsArray[indexPath.row]
-               cell.textLabel?.text = text
-               return cell
+            let text = myDestinationsArray[indexPath.row]
+            cell.textLabel?.text = text
+            cell.detailTextLabel?.text = myCitiesArray[indexPath.row]
+            return cell
 
     }
     

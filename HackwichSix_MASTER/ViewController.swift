@@ -10,6 +10,9 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var myFriendsArray = ["Sara", "Nicole", "Grant"]
+    //Problem Set #2
+    //create new array
+    var myFriendsHomeArray = ["Honolulu", "Kaneʻohe", "Kailua"]
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,9 +23,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-               let text = myFriendsArray[indexPath.row]
-               cell.textLabel?.text = text
-               return cell
+        let text = myFriendsArray[indexPath.row]
+        cell.detailTextLabel?.text = myFriendsHomeArray[indexPath.row]
+        cell.textLabel?.text = text
+        return cell
 
     }
     
